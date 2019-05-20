@@ -2,3 +2,146 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+#pourcentage{
+  width: 165px;
+  display: flex;
+  justify-content: center;
+  border-radius: 0px 94%;
+  background-color: white;
+  /* opacity: 107.2; */
+  height: 78px;
+  margin-top: 10px;
+  align-items: center;
+  color: black;
+  padding-left: 7px;
+}
+img{
+  width:50px;
+}
+.iconperso{
+  margin-top: 60px;
+  width: 50px;
+  background-color: white;
+  border-radius:50%
+}
+.changetache{
+  background-color: #f8d00c;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 36px;
+  margin-top: 17px;
+
+
+}
+.imgtaches{
+  width: 40px;
+  height: 40px;
+  margin-left: 36px;
+  margin-top: 17px; 
+}
+.sporttache{
+  background-color: #f14141;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 36px;
+  margin-top: 17px;  
+}
+.bande{
+  width: 100%;
+  height: 90px;
+  background-color: aliceblue;
+  border-bottom: 10px solid #33bcc3;
+}
+#text{
+  padding:20px;
+  margin-top:-55px;
+  border-bottom: 10px solid #33bcc3;
+  background-color: aliceblue
+}
+.imgtache{
+  width: 40px;
+  height: 40px;
+border: 2px solid #f8d00c;
+    margin-left: 36px;
+    margin-top: 17px;
+    background-color: white;
+}
+.tachematin{
+  display:flex;
+  justify-content: space-around;
+  height:30px;
+  width: 100%;
+    padding-right: 31px;
+  flex-wrap:wrap;
+  background-color:#33bcc3;
+  margin-top: 32px;
+}
+#menu{
+  display:flex;
+  justify-content: space-around;
+  height: 106px;
+  background-color:#33bcc3;
+  
+
+}
+#page{
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+.arrayicon{
+  display:flex;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  width:100%;
+  height:auto;
+  position: absolute;
+    top: 40%;
+}
+#sporto{
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+  margin-top:20px;
+}
+#programme{
+  position:absolute;
+  top:35%;
+  display:none;
+}
+
+#placer{
+  position:absolute;
+  top:28% !important;
+  display:none
+}
+.semaine{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.jour{
+  width: 31%;
+    display: flex;
+    margin-right: -2px;
+    flex-direction: column;
+    margin-bottom: 12px;
+    margin-top: 9px;
+}
+
+.demijour{
+  width: 100%;
+  height: 50px;
+  background-color: #0bb8cc;
+  margin-right: 0px;
+  margin-bottom: 1px;
+  padding-left:5px;
+  color:white;
+  p{
+    font-size:10px;
+  }
+}

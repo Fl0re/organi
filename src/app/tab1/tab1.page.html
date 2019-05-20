@@ -1,41 +1,196 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab One
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+  <section id='page'>
+    <div id='menu'>
+      <div class='iconperso'>
+        <img src='../../assets/couple.png'>
+      </div>
+      <div id='pourcentage'>
+        <h1>{{pourcentage}}% </h1>
+      </div>
+
+      <div class='iconperso'>
+        <img (click)='childrenpage()' src='../../assets/children.png'>
+      </div>
+    </div>
+
+
+    <img src='../../assets/sun.png'>
+    <p id='text'>“La joie est en tout, il faut savoir l’extraire.”
+    </p>
+  </section>
+  <section id='addActivity'>
+    <div
+      style='position:absolute; background-color:white;top:27%; z-index:10;left:0% ;width:100%; border-bottom:1px solid grey; display:flex;justify-content:space-around;position:fixed'>
+      <h6 (click)='save()' style='color:#11f311'>Save</h6>
+      <h5> Mes activités à inserer</h5>
+      <h6 (click)='cancel()' style='color:red'>Cancel</h6>
+    </div>
+    <div class='arrayicon'>
+      <div *ngFor='let icon of arrayicone'>
+        <img (click)='selectionne(icon)' id='{{icon.name}}' style='width:40px;height:40px; margin-right:23px'
+          src='{{icon.icon}}'>
+      </div>
+    </div>
+  </section>
+  
+  <div (click)='showiconetoplace()' id='placer'>
+    <h5>Mes activités à placer </h5>
+    <img style='width:10px; height:10px;position:absolute; top:23px;left:200px' src='../../assets/bas.png'>
+  </div>
+  <section class='arrayicon' id='programme'>
+
+    <div *ngFor='let icon of arrayicone'>
+      <div draggable *ngIf="icon.save === true  ">
+
+        <img  id='{{icon.name}}place'  style='width:30px;height:30px; margin-right:10px'
+          src='{{icon.icon}}'>
+      </div>
+    </div>
+    <div class='semaine'>
+      <div class='jour'>
+        <div class='demijour'droppable >
+          <p>Lundi 00h-12h</p>
+        </div>
+        <div class='demijour'droppable >
+          <p>Lundi 12h-00h</p>
+
+        </div>
+      </div>
+      <div class='jour'>
+        <div class='demijour'droppable >
+          <p>Mardi 00h-12h</p>
+
+        </div>
+        <div class='demijour'droppable >
+          <p>Mardi 12h-00h</p>
+
+        </div>
+      </div>
+      <div class='jour'>
+        <div class='demijour'droppable >
+          <p>Mercredi 00h-12h</p>
+
+        </div>
+        <div class='demijour'droppable >
+          <p>Mercredi 12h-00h</p>
+
+        </div>
+      </div>
+      <div class='jour'>
+        <div class='demijour'droppable >
+          <p>Jeudi 00h-12h</p>
+
+        </div>
+        <div class='demijour'droppable >
+          <p>Jeudi 12h-00h</p>
+
+        </div>
+      </div>
+      <div class='jour'>
+        <div class='demijour'droppable >
+          <p>Vendredi 00h-12h</p>
+
+        </div>
+        <div class='demijour'droppable >
+          <p>Vendredi 12h-00h</p>
+
+        </div>
+      </div>
+      <div class='jour'>
+        <div class='demijour'droppable >
+          <p>Samedi 00h-12h</p>
+
+        </div>
+        <div class='demijour'droppable >
+          <p>Samedi 12h-00h</p>
+
+
+        </div>
+      </div>
+      <div class='jour'>
+        <div class='demijour'droppable >
+          <p>Dimanche 00h-12h</p>
+
+
+        </div>
+        <div class='demijour'droppable >
+          <p>Dimanche 12h-00h</p>
+
+        </div>
+      </div>
+      <ul>
+        <li draggable>Coffee</li>
+        <li draggable>Tea</li>
+        <li draggable>Milk</li>
+      </ul>    
+    
+      <div droppable>
+        <p>Drop items here</p>
+      </div> 
+
+
+    </div>
+
+
+
+
+  </section>
+  <!-- <div class='tachematin'>
+        <div (click)='tache("taches")' [ngClass]="taches === true ? 'changetache' : 'imgtache'">
+          <img src='../../assets/ptitdej.png'>
+        </div>
+        <div (click)='tache("dej")' [ngClass]="dej === true ? 'changetache' : 'imgtache'">
+          <img src='../../assets/dent.png'>
+        </div>
+        <div (click)='tache("hair")' [ngClass]="hair === true ? 'changetache' : 'imgtache'">
+          <img src='../../assets/hair-dryer.png'>
+        </div>
+        <div (click)='tache("linge")' [ngClass]="linge === true ? 'changetache' : 'imgtache'">
+          <img src='../../assets/lavelinge.png'>
+        </div>
+        <div (click)='tache("vaisselle")' [ngClass]="vaisselle === true ? 'changetache' : 'imgtache'">
+          <img src='../../assets/dishwasher.png'>
+        </div>
+        <div (click)='tache("plat")' [ngClass]="plat === true ? 'changetache' : 'imgtache'">
+          <img src='../../assets/foodmealplaterestaurant_109684.png'>
+        </div>
+        <div (click)='tache("gouter")' [ngClass]="gouter === true ? 'changetache' : 'imgtache'">
+          <img src='../../assets/gouter.png'>
+        </div>
+      </div>
+    
+    </div>
+    <div class='bande'></div>
+    <div id='sporto'>
+    <div (click)='tache("sport")' [ngClass]="sport === true ? 'sporttache' : 'imgtaches'">
+        <img src='../../assets/sport.png'>
+      </div>
+      <div (click)='tache("abdo")' [ngClass]="abdo === true ? 'sporttache' : 'imgtaches'">
+          <img src='../../assets/abdos.png'>
+        </div>²
+      </div>
+    <div class='tachematin'>
+      <div (click)='tache("shower")' [ngClass]="shower === true ? 'changetache' : 'imgtache'">
+        <img src='../../assets/shower.png'>
+      </div>
+      <div (click)='tache("etendoir")' [ngClass]="etendoir === true ? 'changetache' : 'imgtache'">
+        <img src='../../assets/etendoir.png'>
+      </div>
+      <div (click)='tache("brosse")' [ngClass]="brosse === true ? 'changetache' : 'imgtache'">
+        <img src='../../assets/dent.png'>
+      </div>
+      <div (click)='tache("repas")' [ngClass]="repas === true ? 'changetache' : 'imgtache'">
+        <img src='../../assets/vaiss.png'>
+      </div>
+      <div (click)='tache("vaiss")' [ngClass]="vaiss === true ? 'changetache' : 'imgtache'">
+        <img src='../../assets/dishwasher.png'>
+      </div>
+      <div (click)='tache("ffod")' [ngClass]="ffod === true ? 'changetache' : 'imgtache'">
+        <img src='../../assets/foodmealplaterestaurant_109684.png'>
+      </div>
+     
+    </div>
+    <div class='bande'></div> -->
+
+
 </ion-content>
